@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 100%;
+            height: 400px;
+            margin: 200px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            width: 90%;
+            margin: 10px auto;
+            background-color: #1967D2;
+            text-align: center;
+            font-size: 25px;
+            color: white;
+            text-transform: capitalize;
+        }
+
+        span {
+            position: absolute;
+            top: 40%;
+            font-size: 60px;
+            font-weight: bold;
+            color: red;
+            cursor: pointer;
+            left: .5%;
+            z-index: 1;
+        }
+
+        span:nth-of-type(2) {
+            left: 98%;
+            text-align: right;
+        }
+
+        section {
+            width: 98%;
+            height: 300px;
+            background-color: #f4f4f4;
+            margin: 10px auto;
+            display: flex;
+            justify-content: left;
+            overflow-x: auto;
+        }
+
+        section::-webkit-scrollbar {
+            visibility: hidden;
+        }
+
+        div {
+            min-width: 330px;
+            height: 100%;
+            position: relative;
+            left: 0;
+            text-align: center;
+            padding-top: 60px;
+            font-size: 150px;
+            font-weight: bold;
+            margin: 10px 20px;
+            color: white;
+            background-color: purple;
+            transform: 0.5s;
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>slider</h1>
+        <span onclick="leftside()">&#139;</span>
+        <span onclick="rightside()">&#155;</span>
+        <section>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+        </section>
+    </main>
+
+</body>
+<script>
+    var div = document.querySelectorAll('div');
+    var l = 0;
+    const leftside = () => {
+        l++;
+        for (var index of div) {
+            if (l == 0) {
+                index.style.left = '0px'
+            }
+            if (l == 1) {
+                index.style.left = '-370px'
+            }
+            if (l == 2) {
+                index.style.left = '-740px'
+            }
+            if (l == 3) {
+                index.style.left = '-1110px'
+            }
+            if (l == 4) {
+                index.style.left = '-1480px'
+            }
+            if (l == 5) {
+                index.style.left = '-1850px'
+            }
+            if(l==6){
+                index.style.left = '-2220px'
+            }
+        }
+
+    }
+    const rightside = () => {
+        l--;
+        for (var index of div) {
+            if (l == 0) {
+                index.style.left = '0px'
+            }
+            if (l == 1) {
+                index.style.left = '-370px'
+            }
+            if (l == 2) {
+                index.style.left = '-740px'
+            }
+            if (l == 3) {
+                index.style.left = '-1110px'
+            }
+            if (l == 4) {
+                index.style.left = '-1480px'
+            }
+            if (l == 5) {
+                index.style.left = '-1850px'
+            }
+            if(l==6){
+                index.style.left = '-2220px'
+            }
+        }
+    }
+
+</script>
+
+</html>
